@@ -114,7 +114,7 @@ const Footer = ({isLogin}) => {
               <div className="footer__bottom">
                 <p className="footer__description d-flex align-items-center justify-content-center gap-1 pt-4">
                   <i className="ri-copyright-line"></i>Copyright 2022, Developed by
-                  SPA tech team. All rights reserved.
+                  SPA tech team. All rights reserved. v.1.2
                 </p>
               </div>
             </Col>
@@ -175,7 +175,7 @@ const Footer = ({isLogin}) => {
               <div className="footer__bottom">
                 <p className="footer__description d-flex align-items-center justify-content-center gap-1 pt-4">
                   <i className="ri-copyright-line"></i>Copyright 2022, Developed by
-                  SPA tech team. All rights reserved.
+                  SPA tech team. All rights reserved. v1.1
                 </p>
               </div>
             </Col>
