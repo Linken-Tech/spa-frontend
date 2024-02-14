@@ -57,10 +57,10 @@ jobs:
   #         aws-region: ${{ env.AWS_REGION }}
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build app
-        run: npm run build
+        run: yarn run build
 
       - name: Upload to S3 Bucket
         uses: jakejarvis/s3-sync-action@master
