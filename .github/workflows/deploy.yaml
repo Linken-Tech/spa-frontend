@@ -26,35 +26,41 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Build Production File
-        run: |
-          yarn install
-          yarn run build
+      # - name: Build Production File
+      #   run: |
+      #     yarn install
+      #     yarn run build
       
-      - name: Upload Build File to Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: app-build
-          path: build/
+      # - name: Upload Build File to Artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: app-build
+      #     path: build/
 
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-20.04
-    needs: build
-    if: success()
+  # deploy:
+  #   name: Deploy
+  #   runs-on: ubuntu-20.04
+  #   needs: build
+  #   if: success()
     
-    steps:
-      - name: Download Production Build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: app-build
+  #   steps:
+  #     - name: Download Production Build artifacts
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: app-build
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+  #     - name: Configure AWS credentials
+  #       uses: aws-actions/configure-aws-credentials@v1
+  #       with:
+  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #         aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build app
+        run: npm run build
 
       - name: Upload to S3 Bucket
         uses: jakejarvis/s3-sync-action@master
