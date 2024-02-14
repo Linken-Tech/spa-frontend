@@ -30,6 +30,7 @@ jobs:
       - name: Build Production File
         run: |
           yarn install
+          echo "${{ secrets.PROD_ENV }}" > .env
           yarn run build
       
       - name: Upload Build File to Artifact
