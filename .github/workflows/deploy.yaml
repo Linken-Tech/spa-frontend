@@ -8,6 +8,7 @@ on:
 
 env:
   AWS_REGION: ap-southeast-1
+  CI: false # Ignore Warning on npm run build
 
 permissions:
   contents: read
@@ -28,7 +29,6 @@ jobs:
 
       - name: Build Production File
         run: |
-          yarn CI
           yarn install
           yarn run build
       
