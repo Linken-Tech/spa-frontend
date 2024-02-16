@@ -29,9 +29,11 @@ jobs:
 
       - name: Build Production File
         run: |
-          yarn install
+          # yarn install
+          npm install --force
           echo "${{ secrets.PROD_ENV }}" > .env
-          yarn run build
+          # yarn run build
+          npm run build
       
       - name: Upload Build File to Artifact
         uses: actions/upload-artifact@v3
