@@ -1,7 +1,9 @@
-import React ,{useState, useRef}from "react";
-import { Container, Row, Col } from "reactstrap";
-import "../../styles/common-section.css";
+import React, { useState, useRef } from "react";
+import { Container, Row } from "reactstrap";
+
 import page from "../../assets/data/pageData.js";
+
+import "../../styles/common-section.css";
 
 const ManagePages = () => {
   const select = useRef();
@@ -9,17 +11,26 @@ const ManagePages = () => {
 
   return (
     <section>
-    <Container>
-      <Row>
+      <Container>
+        <Row>
           <h2>Manage Page</h2>
           <hr className="style1 text-secondary"></hr>
           <div className="form-group col-md-5">
-              <label htmlFor="page">Select Page</label>
-              <select id="page" className="form-control" ref={select}  defaultValue="" onChange={(e) => setChosenPage(e.target.value)} required>
-                  {page.map((option, index) => (
-                      <option key={index} value={option.name}>{option.name}</option>
-                  ))}
-              </select>
+            <label htmlFor="page">Select Page</label>
+            <select
+              id="page"
+              className="form-control"
+              ref={select}
+              defaultValue=""
+              onChange={(e) => setChosenPage(e.target.value)}
+              required
+            >
+              {page.map((option, index) => (
+                <option key={index} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
           </div>
 
           <hr className="style1 mt-4 section-line"></hr>
@@ -30,19 +41,26 @@ const ManagePages = () => {
           </div>
           <hr className="style1 mt-4 section-line"></hr>
 
-
           {/* 3rd row */}
-             <div className="form-group col-md-11">
-             <label htmlFor="overview">Page Details</label>
-             <textarea rows="3" className="form-control" id="overview" required></textarea>
-             </div>
-             <hr className="style1 mt-4 section-line"></hr>
-      </Row>
-      <button type="submit" className="btn btn-secondary float-end">Cancel</button>
-      <button type="submit" className="btn btn-primary float-end mx-2">Save Changes</button>
-
-    </Container>
-  </section>
+          <div className="form-group col-md-11">
+            <label htmlFor="overview">Page Details</label>
+            <textarea
+              rows="3"
+              className="form-control"
+              id="overview"
+              required
+            ></textarea>
+          </div>
+          <hr className="style1 mt-4 section-line"></hr>
+        </Row>
+        <button type="submit" className="btn btn-secondary float-end">
+          Cancel
+        </button>
+        <button type="submit" className="btn btn-primary float-end mx-2">
+          Save Changes
+        </button>
+      </Container>
+    </section>
   );
 };
 

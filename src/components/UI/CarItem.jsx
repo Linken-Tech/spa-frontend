@@ -16,7 +16,7 @@ const CarItem = (props) => {
     setPriceOfSale(price_of_sale);
   }, []);
 
-  if (price_of_sale != null && price_of_sale != 0 && price_of_sale != ''){
+  if (price_of_sale !== null && price_of_sale !== 0 && price_of_sale !== ''){
     // renturn sale car
     return (
       <Col lg="4" md="4" sm="6" className="mb-5">

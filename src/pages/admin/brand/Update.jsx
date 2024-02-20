@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 
 const UpdateBrands = () => {
-    const [chosenBrand, setChosenBrand] = useState('')
+
+  const [chosenBrand] = useState("");
+  
   return (
     <section>
       <Container>
@@ -13,16 +15,22 @@ const UpdateBrands = () => {
           <form className="d-flex form-inline">
             <Col lg="6">
               <div className="form-group mb-2 textbox">
-                <input type="text" className="form-control" id="inputBrand" placeholder="Brand" />
+                <input
+                  type="text"
+                  className="form-control"
+                  id="inputBrand"
+                  placeholder="Brand"
+                />
               </div>
             </Col>
 
             <Col lg="2">
-              <button type="submit" className="btn btn-primary mb-2">Submit</button>
+              <button type="submit" className="btn btn-primary mb-2">
+                Submit
+              </button>
             </Col>
           </form>
         </Row>
-        
       </Container>
     </section>
   );

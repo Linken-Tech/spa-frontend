@@ -1,10 +1,11 @@
-import React, { useState , useEffect} from "react";
-
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
-import "../../styles/footer.css";
+
 import logo1 from "../../assets/all-images/logo1.svg";
 import Helmet from "../Helmet/Helmet";
+
+import "../../styles/footer.css";
 
 const quickLinksAdmin = [
   {
@@ -53,16 +54,14 @@ const quickLinksCustomer = [
   },
 ];
 
-const Footer = ({isLogin}) => {
-
-  useEffect(()=> {
-    setAdmin(isLogin)
-  },[isLogin])
+const Footer = ({ isLogin }) => {
+  useEffect(() => {
+    setAdmin(isLogin);
+  }, [isLogin]);
 
   const [isAdmin, setAdmin] = useState(isLogin);
-  const date = new Date();
-  const year = date.getFullYear();
-  if(isAdmin){
+
+  if (isAdmin) {
     return (
       <footer className="footer">
         <Container>
@@ -76,10 +75,11 @@ const Footer = ({isLogin}) => {
                 </h1>
               </div>
               <p className="footer__logo-content">
-                We are an one stop Automotive company that could serve you the best service on your selection of car variety.
+                We are an one stop Automotive company that could serve you the
+                best service on your selection of car variety.
               </p>
             </Col>
-  
+
             <Col lg="2" md="4" sm="6">
               <div className="mb-4">
                 <h5 className="footer__link-title">Quick Links</h5>
@@ -92,29 +92,33 @@ const Footer = ({isLogin}) => {
                 </ListGroup>
               </div>
             </Col>
-  
+
             <Col lg="3" md="4" sm="6">
               <div className="mb-4">
                 <h5 className="footer__link-title mb-4">Main Office</h5>
-                <p className="office__info">Address: No.11, Lot 6015, Jalan Ipoh Batu 7 1/2, Taman Selayang Makmur, 68100 Selayang, Selangor</p>
+                <p className="office__info">
+                  Address: No.11, Lot 6015, Jalan Ipoh Batu 7 1/2, Taman
+                  Selayang Makmur, 68100 Selayang, Selangor
+                </p>
                 <p className="office__info">Phone: +60123160808</p>
-  
+
                 <p className="office__info">Email: smartpowerauto@yahoo.com</p>
-  
-                <p className="office__info">Office Time: Monday till Saturday 9AM-5PM</p>
+
+                <p className="office__info">
+                  Office Time: Monday till Saturday 9AM-5PM
+                </p>
               </div>
             </Col>
-  
+
             <Col lg="3" md="4" sm="12">
-              <div className="mb-4">
-              </div>
+              <div className="mb-4"></div>
             </Col>
-  
+
             <Col lg="12">
               <div className="footer__bottom">
                 <p className="footer__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                  <i className="ri-copyright-line"></i>Copyright 2022, Developed by
-                  SPA tech team. All rights reserved. v.1.2
+                  <i className="ri-copyright-line"></i>Copyright 2022, Developed
+                  by SPA tech team. All rights reserved. v.1.2
                 </p>
               </div>
             </Col>
@@ -122,13 +126,12 @@ const Footer = ({isLogin}) => {
         </Container>
       </footer>
     );
-  }
-  else{
+  } else {
     return (
       <footer className="footer">
         <Container>
           <Row>
-          <Col lg="4" md="4" sm="12">
+            <Col lg="4" md="4" sm="12">
               <div className="logo footer__logo">
                 <h1>
                   <Link to="/home" className=" d-flex align-items-center gap-2">
@@ -137,10 +140,11 @@ const Footer = ({isLogin}) => {
                 </h1>
               </div>
               <p className="footer__logo-content">
-                We are an one stop Automotive company that could serve you the best service on your selection of car variety.
+                We are an one stop Automotive company that could serve you the
+                best service on your selection of car variety.
               </p>
             </Col>
-  
+
             <Col lg="2" md="4" sm="6">
               <div className="mb-4">
                 <h5 className="footer__link-title">Quick Links</h5>
@@ -153,41 +157,45 @@ const Footer = ({isLogin}) => {
                 </ListGroup>
               </div>
             </Col>
-  
+
             <Col lg="3" md="4" sm="6">
               <div className="mb-4">
                 <h5 className="footer__link-title mb-4">Main Office</h5>
-                <p className="office__info">Address: No.11, Lot 6015, Jalan Ipoh Batu 7 1/2, Taman Selayang Makmur, 68100 Selayang, Selangor</p>
+                <p className="office__info">
+                  Address: No.11, Lot 6015, Jalan Ipoh Batu 7 1/2, Taman
+                  Selayang Makmur, 68100 Selayang, Selangor
+                </p>
                 <p className="office__info">Phone: +60123160808</p>
-  
+
                 <p className="office__info">Email: smartpowerauto@yahoo.com</p>
-  
-                <p className="office__info">Office Time: Monday till Saturday 9AM-5PM</p>
+
+                <p className="office__info">
+                  Office Time: Monday till Saturday 9AM-5PM
+                </p>
               </div>
             </Col>
-  
+
             <Col lg="3" md="4" sm="12">
-              <div className="mb-4">
-              </div>
+              <div className="mb-4"></div>
             </Col>
-  
+
             <Col lg="12">
               <div className="footer__bottom">
                 <p className="footer__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                  <i className="ri-copyright-line"></i>Copyright 2022, Developed by
-                  SPA tech team. All rights reserved. v1.1
+                  <i className="ri-copyright-line"></i>Copyright 2022, Developed
+                  by SPA tech team. All rights reserved. v1.1
                 </p>
               </div>
             </Col>
           </Row>
         </Container>
         {/* <Helmet> <script defer src="https://widget.tochat.be/bundle.js?key=76872d3b-f925-4359-b7c1-5f94ef9dbe95"></script></Helmet> */}
-        <Helmet><script defer src={process.env.REACT_APP_TOCHAT_KEY}></script></Helmet>
-        
+        <Helmet>
+          <script defer src={process.env.REACT_APP_TOCHAT_KEY}></script>
+        </Helmet>
       </footer>
     );
   }
-  
 };
 
 export default Footer;

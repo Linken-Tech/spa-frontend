@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 
 import HeroSlider from "../../components/UI/HeroSlider";
@@ -9,14 +9,12 @@ import AboutSection from "../../components/UI/AboutSection";
 import ServicesList from "../../components/UI/ServicesList";
 import { getVehicles } from "../../services/api/Provider";
 
-import carData from "../../assets/data/carData";
-
 const Home = () => {
   const [vehicles, setVehicles] = useState([]);
 
   useEffect(() => {
     _getVehicles();
- }, []);
+  }, []);
 
   function _getVehicles() {
     getVehicles().then((res) => {
@@ -41,7 +39,7 @@ const Home = () => {
               </Col>
 
               <Col lg="8" md="8" sm="12">
-                <FindCarForm fromHome={true}/>
+                <FindCarForm fromHome={true} />
               </Col>
             </Row>
           </Container>

@@ -1,14 +1,10 @@
 import React, { useState,useEffect } from "react";
-
-import carData from "../../assets/data/carData";
 import { Container, Row, Col } from "reactstrap";
-import Helmet from "../../components/Helmet/Helmet";
 import { useParams } from "react-router-dom";
 import ImageGallery from 'react-image-gallery';
+
+import Helmet from "../../components/Helmet/Helmet";
 import { getVehiclesById } from "../../services/api/Provider";
-import { BsSpeedometer, BsFillPersonFill } from "react-icons/bs";
-import { AiTwotoneCalendar } from "react-icons/ai";
-import { FaGasPump } from "react-icons/fa";
 
 import "/node_modules/react-image-gallery/styles/css/image-gallery.css";
 import "../../styles/car-details.css";
@@ -58,7 +54,7 @@ const CarDetails = () => {
     window.open('https://api.whatsapp.com/send?phone=' + WHATSAPP_PHONE_NUMBER, '_blank');
   }
 
-  if (vehicles.price_of_sale != null && vehicles.price_of_sale != 0 && vehicles.price_of_sale != '') {
+  if (vehicles.price_of_sale !== null && vehicles.price_of_sale !== 0 && vehicles.price_of_sale !== '') {
     // return sale car
     return (
       <Helmet title={vehicles.vehicle}>

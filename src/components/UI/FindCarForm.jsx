@@ -1,12 +1,10 @@
 import React, {useState,useEffect} from "react";
-import "../../styles/find-car-form.css";
-import "../../styles/find-car-form.css";
 import { Form, FormGroup } from "reactstrap";
-import carBrand from "../../assets/data/carBrand";
+
 import { getBrands, getModels } from "../../services/api/Provider";
 
-
-
+import "../../styles/find-car-form.css";
+import "../../styles/find-car-form.css";
 
 const FindCarForm = (props) => {
   let {fromHome} = props

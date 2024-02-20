@@ -2,7 +2,7 @@ import React from "react";
 
 import CommonSection from "../../components/UI/CommonSection";
 import Helmet from "../../components/Helmet/Helmet";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Col } from "reactstrap";
 import "../../styles/about.css";
 
 const Policy = () => {
