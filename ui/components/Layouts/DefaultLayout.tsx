@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, ReactNode } from "react";
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
+import Sidebar from "@/ui/components/Sidebar";
+import Header from "@/ui/components/Header";
 
 export default function DefaultLayout({
   children,
