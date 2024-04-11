@@ -1,4 +1,5 @@
-import LoginSignUpForm from "@/app/ui/components/Forms/LoginForm";
+'use client';
+import SignUpForm from "@/app/auth/components/Forms/SignUpForm";
 
 const Register = () => {
     return (
@@ -16,10 +17,7 @@ const Register = () => {
                     <div className="md:flex">
                         <div className="m-8">
                             <div className="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
-                                <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 text-center">
-                                    Register
-                                </h4>
-                                <LoginSignUpForm buttonAction="sign up" haveAccount="Already have an Account? " formAction="Sign In" routePath="/auth/login"></LoginSignUpForm>
+                                <SignUpForm></SignUpForm>
                             </div>
                         </div>
                     </div>
