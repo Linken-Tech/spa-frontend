@@ -9,7 +9,7 @@ const Login = () => {
                         <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 text-center">
                             Welcome Back
                         </h4>
-                        <LoginSignUpForm buttonAction="sign in" haveAccount="Don't have an account? " formAction="Sign Up"></LoginSignUpForm>
+                        <LoginSignUpForm buttonAction="sign in" haveAccount="Don't have an account? " formAction="Sign Up" routePath="/auth/register"></LoginSignUpForm>
                     </div>
                 </div>
                 <div className="w-2/5 h-[550px] bg-green-900 rounded-bl-2xl relative overflow-hidden">

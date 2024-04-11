@@ -19,7 +19,7 @@ const Register = () => {
                                 <h4 className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 text-center">
                                     Register
                                 </h4>
-                                <LoginSignUpForm buttonAction="sign up" haveAccount="Already have an Account? " formAction="Sign In"></LoginSignUpForm>
+                                <LoginSignUpForm buttonAction="sign up" haveAccount="Already have an Account? " formAction="Sign In" routePath="/auth/login"></LoginSignUpForm>
                             </div>
                         </div>
                     </div>

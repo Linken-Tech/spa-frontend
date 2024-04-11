@@ -1,12 +1,12 @@
 
-
 interface LoginSignUpFormProps {
     buttonAction: string;
     haveAccount: string;
     formAction: string;
+    routePath: string;
 }
 
-const LoginSignUpForm = ({buttonAction, haveAccount, formAction}: LoginSignUpFormProps) => {
+const LoginSignUpForm = ({buttonAction, haveAccount, formAction, routePath}: LoginSignUpFormProps) => {
     return (
         <>
             <form className="max-w-screen-lg mt-8 mb-2 w-80 sm:w-96">
@@ -39,7 +39,7 @@ const LoginSignUpForm = ({buttonAction, haveAccount, formAction}: LoginSignUpFor
                 </button>
                 <p className="block mt-4 font-sans text-base antialiased font-normal leading-relaxed text-center text-gray-700">
                     {haveAccount}
-                    <a href="" className="font-medium text-gray-900">
+                    <a href={routePath} className="font-medium text-gray-900">
                         {formAction}
                     </a>
                 </p>
