@@ -4,16 +4,43 @@ import {
     Button,
     Typography,
 } from "@material-tailwind/react";
+import { logIn } from "@/app/api/auth"
+import { useState } from 'react';
 
 // interface LoginSignUpFormProps {
 //     handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 // }
 
+interface FormData {
+    username: string;
+    password: string;
+}
+
 const LoginForm = () => {
-    const handleSubmit = () => {
-        console.log("1212");
+    const [formData, setFormData] = useState<FormData>({
+        username: '',
+        password: ''
+    });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            await logIn(formData); // Assuming logIn is an async function that handles login API call
+            console.log('Login successful'); // Handle success
+        } catch (error) {
+            console.error('Login failed', error); // Handle error
+        }
         // Handle form submission logic here
     };
+
     return (
         <>
             <Card color="transparent" shadow={false}>
@@ -32,6 +59,9 @@ const LoginForm = () => {
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
+                            name="username"
+                            onChange={handleInputChange}
+                            required
                         />
                         <Typography variant="h6" color="blue-gray" className="-mb-3">
                             Password
@@ -44,9 +74,12 @@ const LoginForm = () => {
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
+                            name="password"
+                            onChange={handleInputChange}
+                            required
                         />
                     </div>
-                    <Button className="mt-6"  type="submit" fullWidth>
+                    <Button className="mt-6" type="submit" fullWidth>
                         sign in
                     </Button>
                     <Typography color="gray" className="mt-4 text-center font-normal">

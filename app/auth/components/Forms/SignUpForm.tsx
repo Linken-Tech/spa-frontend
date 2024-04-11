@@ -4,12 +4,32 @@ import {
     Button,
     Typography,
 } from "@material-tailwind/react";
-import { logIn } from "@/app/api/auth"
+import { signUp } from "@/app/api/auth"
+import { useState } from 'react';
+
+interface FormData {
+    username: string;
+    password: string;
+}
 
 const SignUpForm = () => {
-    const handleSubmit = () => {
+    const [formData, setFormData] = useState<FormData>({
+        username: '',
+        password: ''
+    });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
+    };
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        signUp(formData)
+        console.log("formData===>", formData);
         console.log("1212");
-        logIn()
         // Handle form submission logic here
     };
     return (
@@ -30,6 +50,9 @@ const SignUpForm = () => {
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
+                            name="username"
+                            onChange={handleInputChange}
+                            required
                         />
                         <Typography variant="h6" color="blue-gray" className="-mb-3">
                             Password
@@ -42,6 +65,9 @@ const SignUpForm = () => {
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
+                            name="password"
+                            onChange={handleInputChange}
+                            required
                         />
                     </div>
                     <Button className="mt-6" type="submit" fullWidth>
