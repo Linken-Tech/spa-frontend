@@ -1,8 +1,9 @@
 
+
 interface LoginSignUpFormProps {
+    buttonAction: string;
     haveAccount: string;
     formAction: string;
-    buttonAction: string;
 }
 
 const LoginSignUpForm = ({buttonAction, haveAccount, formAction}: LoginSignUpFormProps) => {
@@ -38,7 +39,7 @@ const LoginSignUpForm = ({buttonAction, haveAccount, formAction}: LoginSignUpFor
                 </button>
                 <p className="block mt-4 font-sans text-base antialiased font-normal leading-relaxed text-center text-gray-700">
                     {haveAccount}
-                    <a href="#" className="font-medium text-gray-900">
+                    <a href="" className="font-medium text-gray-900">
                         {formAction}
                     </a>
                 </p>
