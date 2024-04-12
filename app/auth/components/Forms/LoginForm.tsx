@@ -1,11 +1,7 @@
-import {
-    Card,
-    Input,
-    Button,
-    Typography,
-} from "@material-tailwind/react";
-import { logIn } from "@/app/api/auth"
+import { Card, Input, Button, Typography, } from "@material-tailwind/react";
 import { useState } from 'react';
+import Link from 'next/link';
+import { logIn } from "@/app/api/auth"
 
 // interface LoginSignUpFormProps {
 //     handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
@@ -84,9 +80,9 @@ const LoginForm = () => {
                     </Button>
                     <Typography color="gray" className="mt-4 text-center font-normal">
                         Do not have an account?{" "}
-                        <a href="/auth/register" className="font-medium text-gray-900">
+                        <Link href="/auth/register" className="font-medium text-gray-900">
                             Sign Up
-                        </a>
+                        </Link>
                     </Typography>
                 </form>
             </Card>
