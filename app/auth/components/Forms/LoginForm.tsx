@@ -28,13 +28,11 @@ const LoginForm = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        try {
-            await logIn(formData); // Assuming logIn is an async function that handles login API call
+        await logIn(formData).then((response) => {
             console.log('Login successful'); // Handle success
-        } catch (error) {
-            console.error('Login failed', error); // Handle error
-        }
-        // Handle form submission logic here
+        }).catch((error) => {
+            console.error('Login failed', error.message); // Handle error
+        })
     };
 
     return (

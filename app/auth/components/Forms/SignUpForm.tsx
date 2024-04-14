@@ -27,10 +27,13 @@ const SignUpForm = () => {
     };
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        signUp(formData)
+        await signUp(formData).then((response) => {
+            console.log('Received data:', response);
+        }).catch((error) => {
+            console.error('Sign up failed:', error.message);
+        })
         console.log("formData===>", formData);
         console.log("1212");
-        // Handle form submission logic here
     };
     return (
         <>

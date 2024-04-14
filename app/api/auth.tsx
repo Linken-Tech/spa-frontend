@@ -4,12 +4,16 @@ import AxiosInstance from "./apiRequest"
 
 export const signUp = (data: any) => {
     // return AxiosInstance.post(endPoint.register, params)
-    return axios.post(endPoint.register, data).then((response) => {
+    return axios.get(endPoint.register, data).then((response) => {
         console.log(response.data)
-        console.log("1212222")
+        console.log("sign uppp")
     })
 }
 
 export const logIn = (params: any) => {
-    return AxiosInstance.post(endPoint.login, params);
+    return AxiosInstance.post(endPoint.login, params).then((response) => {
+        console.log("loginnn")
+    }).catch(error => {
+        console.error('Error:', error.message);
+      });
 }
