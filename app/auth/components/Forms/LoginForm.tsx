@@ -1,11 +1,10 @@
 import { Card, Input, Button, Typography, } from "@material-tailwind/react";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import Link from 'next/link';
-import { logIn } from "@/app/api/auth"
+import { logIn } from "@/app/auth/lib/auth"
+import { ROUTES } from "@/app/routes/routes"
 
-// interface LoginSignUpFormProps {
-//     handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-// }
 
 interface FormData {
     username: string;
@@ -13,6 +12,7 @@ interface FormData {
 }
 
 const LoginForm = () => {
+    const router = useRouter()
     const [formData, setFormData] = useState<FormData>({
         username: '',
         password: ''
@@ -28,9 +28,13 @@ const LoginForm = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        await logIn(formData).then((response) => {
-            console.log('Login successful'); // Handle success
-        }).catch((error) => {
+        await logIn(formData).then((response: any) => {
+            if (response.status === 200) {
+                const userToken = response.data.access;
+                localStorage.setItem('USER_TOKEN', userToken);
+                router.push(ROUTES.dashboard);
+            }
+        }).catch(error => {
             console.error('Login failed', error.message); // Handle error
         })
     };
@@ -78,7 +82,7 @@ const LoginForm = () => {
                     </Button>
                     <Typography color="gray" className="mt-4 text-center font-normal">
                         Do not have an account?{" "}
-                        <Link href="/auth/register" className="font-medium text-gray-900">
+                        <Link href={ ROUTES.signUp } className="font-medium text-gray-900">
                             Sign Up
                         </Link>
                     </Typography>

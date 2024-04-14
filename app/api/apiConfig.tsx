@@ -2,7 +2,7 @@
 export const baseURL = "http://localhost:8000/v2"
 
 export const endPoint = {
-    register: `${baseURL}/auth/`,
+    signUp: `${baseURL}/auth/`,
     login: `${baseURL}/auth/login`,
     verifyToken: `${baseURL}/auth/token/verify/`,
 }

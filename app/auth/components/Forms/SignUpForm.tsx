@@ -4,8 +4,10 @@ import {
     Button,
     Typography,
 } from "@material-tailwind/react";
-import { signUp } from "@/app/api/auth"
+import { useRouter } from "next/navigation";
+import { signUp } from "@/app/auth/lib/auth"
 import { useState } from 'react';
+import { ROUTES } from "@/app/routes/routes"
 
 interface FormData {
     username: string;
@@ -13,6 +15,7 @@ interface FormData {
 }
 
 const SignUpForm = () => {
+    const router = useRouter()
     const [formData, setFormData] = useState<FormData>({
         username: '',
         password: ''
@@ -27,13 +30,13 @@ const SignUpForm = () => {
     };
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        await signUp(formData).then((response) => {
-            console.log('Received data:', response);
+        await signUp(formData).then((response: any) => {
+            if (response.status === 200) {
+                router.push(ROUTES.dashboard)
+            }
         }).catch((error) => {
             console.error('Sign up failed:', error.message);
         })
-        console.log("formData===>", formData);
-        console.log("1212");
     };
     return (
         <>
@@ -78,7 +81,7 @@ const SignUpForm = () => {
                     </Button>
                     <Typography color="gray" className="mt-4 text-center font-normal">
                         Already have an account?{" "}
-                        <a href="/auth/login" className="font-medium text-gray-900">
+                        <a href={ ROUTES.login } className="font-medium text-gray-900">
                             Sign In
                         </a>
                     </Typography>
