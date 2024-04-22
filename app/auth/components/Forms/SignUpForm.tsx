@@ -8,15 +8,11 @@ import { useRouter } from "next/navigation";
 import { signUp } from "@/app/auth/lib/auth"
 import { useState } from 'react';
 import { ROUTES } from "@/app/routes/routes"
-
-interface FormData {
-    username: string;
-    password: string;
-}
+import { SignUpFormData } from "@/app/definition/definition";
 
 const SignUpForm = () => {
     const router = useRouter()
-    const [formData, setFormData] = useState<FormData>({
+    const [formData, setFormData] = useState<SignUpFormData>({
         username: '',
         password: ''
     });
@@ -34,19 +30,19 @@ const SignUpForm = () => {
             if (response.status === 200) {
                 router.push(ROUTES.dashboard)
             }
-        }).catch((error) => {
+        }).catch((error: any) => {
             console.error('Sign up failed:', error.message);
         })
     };
     return (
         <>
-            <Card color="transparent" shadow={false}>
-                <Typography variant="h4" color="blue-gray">
+            <Card color="transparent" shadow={false} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Sign Up
                 </Typography>
                 <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={handleSubmit}>
                     <div className="mb-1 flex flex-col gap-6">
-                        <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        <Typography variant="h6" color="blue-gray" className="-mb-3" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Username
                         </Typography>
                         <Input
@@ -59,8 +55,8 @@ const SignUpForm = () => {
                             name="username"
                             onChange={handleInputChange}
                             required
-                        />
-                        <Typography variant="h6" color="blue-gray" className="-mb-3">
+                            onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />
+                        <Typography variant="h6" color="blue-gray" className="-mb-3" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Password
                         </Typography>
                         <Input
@@ -74,14 +70,14 @@ const SignUpForm = () => {
                             name="password"
                             onChange={handleInputChange}
                             required
-                        />
+                            onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />
                     </div>
-                    <Button className="mt-6" type="submit" fullWidth>
+                    <Button className="mt-6" type="submit" fullWidth placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         sign up
                     </Button>
-                    <Typography color="gray" className="mt-4 text-center font-normal">
+                    <Typography color="gray" className="mt-4 text-center font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         Already have an account?{" "}
-                        <a href={ ROUTES.login } className="font-medium text-gray-900">
+                        <a href={ROUTES.login} className="font-medium text-gray-900">
                             Sign In
                         </a>
                     </Typography>

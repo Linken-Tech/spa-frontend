@@ -1,19 +1,15 @@
-import { Card, Input, Button, Typography, } from "@material-tailwind/react";
+import { Card, CardProps, Input, Button, Typography } from "@material-tailwind/react";
 import { useState } from 'react';
+import React from "react";
 import { useRouter } from 'next/navigation'
 import Link from 'next/link';
 import { logIn } from "@/app/auth/lib/auth"
 import { ROUTES } from "@/app/routes/routes"
-
-
-interface FormData {
-    username: string;
-    password: string;
-}
+import { LoginFormData } from "@/app/definition/definition"
 
 const LoginForm = () => {
     const router = useRouter()
-    const [formData, setFormData] = useState<FormData>({
+    const [formData, setFormData] = useState<LoginFormData>({
         username: '',
         password: ''
     });
@@ -34,20 +30,20 @@ const LoginForm = () => {
                 localStorage.setItem('USER_TOKEN', userToken);
                 router.push(ROUTES.dashboard);
             }
-        }).catch(error => {
+        }).catch((error: any) => {
             console.error('Login failed', error.message); // Handle error
         })
     };
 
     return (
         <>
-            <Card color="transparent" shadow={false}>
-                <Typography variant="h4" color="blue-gray" className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 text-center">
+            <Card color="transparent" shadow={false} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <Typography variant="h4" color="blue-gray" className="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 text-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Welcome Back
                 </Typography>
                 <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={handleSubmit}>
                     <div className="mb-1 flex flex-col gap-6">
-                        <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        <Typography variant="h6" color="blue-gray" className="-mb-3" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Username
                         </Typography>
                         <Input
@@ -59,9 +55,9 @@ const LoginForm = () => {
                             }}
                             name="username"
                             onChange={handleInputChange}
-                            required
-                        />
-                        <Typography variant="h6" color="blue-gray" className="-mb-3">
+                            required 
+                            onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
+                        <Typography variant="h6" color="blue-gray" className="-mb-3" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Password
                         </Typography>
                         <Input
@@ -75,12 +71,12 @@ const LoginForm = () => {
                             name="password"
                             onChange={handleInputChange}
                             required
-                        />
+                            onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
-                    <Button className="mt-6" type="submit" fullWidth>
+                    <Button className="mt-6" type="submit" fullWidth placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         sign in
                     </Button>
-                    <Typography color="gray" className="mt-4 text-center font-normal">
+                    <Typography color="gray" className="mt-4 text-center font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         Do not have an account?{" "}
                         <Link href={ ROUTES.signUp } className="font-medium text-gray-900">
                             Sign Up
