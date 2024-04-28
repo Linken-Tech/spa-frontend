@@ -1,11 +1,23 @@
+'use client';
+import SidebarCollapse from "./components/Sidebar/Sidebar"
+import TableWithStripedRows from "./components/Table/StripedRowTable"
 
-export default function Dashboard() {
+const Dashboard = () => {
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">
-                Hello World!
-            </h1>
-        </div>
+        <>
+            <div className="flex">
+                <div className="flex-none w-14 bg-white">
+                    <SidebarCollapse></SidebarCollapse>
+                </div>
+                <div className="flex-none w-80">
 
+                </div>
+                <div className="flex-l mt-64">
+                    <TableWithStripedRows></TableWithStripedRows>
+                </div>
+            </div>
+        </>
     )
 }
+
+export default Dashboard
