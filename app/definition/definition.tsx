@@ -13,5 +13,4 @@ export type emptyProps = {
     placeholder: string;
     onPointerEnterCapture: () => void;
     onPointerLeaveCapture: () => void;
-    crossOrigin: string;
 }

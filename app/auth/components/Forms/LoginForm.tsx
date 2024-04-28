@@ -18,8 +18,7 @@ const LoginForm: React.FC = () => {
         return {
             placeholder: "",
             onPointerEnterCapture: () => {},
-            onPointerLeaveCapture: () => {},
-            crossOrigin: ""
+            onPointerLeaveCapture: () => {}
         };
     };
 
@@ -64,6 +63,7 @@ const LoginForm: React.FC = () => {
                             name="username"
                             onChange={handleInputChange}
                             {...passEmptyProps()}
+                            crossOrigin=""
                             required 
                         />
                         <Typography variant="h6" color="blue-gray" className="-mb-3" {...passEmptyProps()}>
@@ -79,6 +79,7 @@ const LoginForm: React.FC = () => {
                             name="password"
                             onChange={handleInputChange}
                             {...passEmptyProps()}
+                            crossOrigin=""
                             placeholder="********"
                             required
                         />
