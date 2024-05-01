@@ -4,7 +4,7 @@ import LoginForm from "@/app/auth/components/Forms/LoginForm";
 const Login = () => {
     return (
         <>
-            <div className="flex min-h-screen">
+            <div className="flex">
                 <div className="w-3/5 bg-white flex items-center justify-center">
                     <div className="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
                         <LoginForm></LoginForm>

@@ -4,7 +4,7 @@ import SignUpForm from "@/app/auth/components/Forms/SignUpForm";
 const Register = () => {
     return (
         <>
-            <div className="flex min-h-screen flex-col p-4">
+            <div className="flex flex-col p-4">
                 <div className="bg-green-900 rounded-2xl">
                     <div className="flex">
                         <div className="w-32 h-96">

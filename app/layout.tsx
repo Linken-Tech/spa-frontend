@@ -16,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className={inter.className}>{children}</body>
+      <body className={`flex flex-col h-screen ${inter.className}`}>
+        <div className="flex-1">
+          {children}
+        </div>
+        <footer className="bg-gray-900 text-white text-center py-4">Footer</footer>
+      </body>
     </html>
   );
 }
