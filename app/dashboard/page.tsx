@@ -9,11 +9,16 @@ const Dashboard = () => {
                 <div className="flex-none w-14 bg-green-900">
                     <SidebarCollapse></SidebarCollapse>
                 </div>
-                <div className="flex-none w-80">
+                <div className="flex flex-col w-full">
+                    <span>testing</span>
+                    <div className="flex-none h-14 bg-gray-400">
 
-                </div>
-                <div className="flex">
-                    <TableWithStripedRows></TableWithStripedRows>
+                    </div>
+                    <div className="grow bg-gray-300 flex items-center justify-center">
+                        <div className="w-4/5">
+                            <TableWithStripedRows></TableWithStripedRows>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
