@@ -20,7 +20,7 @@ export default function RootLayout({
         <div className="flex-1">
           {children}
         </div>
-        <footer className="bg-gray-900 text-white text-center py-4">Footer</footer>
+        <footer className="bg-black text-white text-center py-4">Footer</footer>
       </body>
     </html>
   );
