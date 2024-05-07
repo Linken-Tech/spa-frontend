@@ -35,7 +35,7 @@ const SignUpForm: React.FC = () => {
         e.preventDefault();
         await signUp(formData).then((response: any) => {
             if (response.status === 200) {
-                router.push(ROUTES.dashboard)
+                router.push(ROUTES.vehicle)
             }
         }).catch((error: any) => {
             console.error('Sign up failed:', error.message);

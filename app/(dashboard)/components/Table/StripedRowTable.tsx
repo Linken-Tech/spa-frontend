@@ -1,5 +1,5 @@
-import { emptyProps } from "@/app/definition/definition";
 import { Card, Typography } from "@material-tailwind/react";
+import { emptyProps } from "@/app/definition/definition";
  
 const TABLE_HEAD = ["Name", "Job", "Employed", ""];
  

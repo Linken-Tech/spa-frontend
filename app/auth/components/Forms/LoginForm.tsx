@@ -36,7 +36,7 @@ const LoginForm: React.FC = () => {
             if (response.status === 200) {
                 const userToken = response.data.access;
                 localStorage.setItem('USER_TOKEN', userToken);
-                router.push(ROUTES.dashboard);
+                router.push(ROUTES.vehicle);
             }
         }).catch((error: any) => {
             console.error('Login failed', error.message); // Handle error

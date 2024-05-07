@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import TableWithStripedRows from "./components/Table/StripedRowTable"
 import DefaultSidebar from "./components/Sidebar/Sidebar";
+import { BreadcrumbsWithHomeIcon } from "./components/Breadcrumbs/Breadcrumbs";
 
 const Dashboard = () => {
     const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false)
@@ -20,10 +21,10 @@ const Dashboard = () => {
                 <div className={isMobileScreen ? "flex-none w-14 bg-green-900" : "flex-none w-auto bg-green-900"}>
                     <DefaultSidebar isMobileScreen={isMobileScreen}></DefaultSidebar>
                 </div>
-                <div className="flex flex-col w-full text-black">
+                <div className="flex flex-col w-full text-black mt-5">
                     <span>testing</span>
                     <div className="flex h-14 bg-gray-400 items-center">
-                        <span>testing</span>
+                        <BreadcrumbsWithHomeIcon></BreadcrumbsWithHomeIcon>
                     </div>
                     <div className="grow bg-gray-300 flex flex-col items-center">
                         <div className="flex items-center h-20 pl-10 mr-auto">
