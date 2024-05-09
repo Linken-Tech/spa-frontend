@@ -10,9 +10,9 @@ const Login = () => {
                         <LoginForm></LoginForm>
                     </div> 
                 </div>
-                <div className="w-2/5 h-[550px] bg-green-900 rounded-bl-2xl relative overflow-hidden">
+                <div className="w-2/5 h-[630px] bg-green-900 rounded-bl-2xl relative overflow-hidden">
                     <img className="absolute w-full h-96 object-cover transform" src="/assests/signup-bg-pattern.png"></img>
-                    <img className="absolute w-full h-96 mt-44 object-cover transform" src="/assests/signup-bg-pattern2.png"></img>
+                    <img className="absolute w-full h-96 mt-64 object-cover transform" src="/assests/signup-bg-pattern2.png"></img>
                 </div>
             </div>
         </>

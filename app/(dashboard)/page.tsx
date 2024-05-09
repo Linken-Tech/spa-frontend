@@ -39,7 +39,6 @@ const Dashboard: React.FC<{ pathName: string }> = ({ pathName }) => {
                     <DefaultSidebar isMobileScreen={isMobileScreen}></DefaultSidebar>
                 </div>
                 <div className="flex flex-col w-full text-black mt-5">
-                    <span>testing</span>
                     <div className="flex h-14 items-center">
                         <BreadcrumbsWithHomeIcon></BreadcrumbsWithHomeIcon>
                     </div>
