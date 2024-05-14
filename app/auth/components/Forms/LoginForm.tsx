@@ -3,7 +3,7 @@ import { useState } from 'react';
 import React from "react";
 import { useRouter } from 'next/navigation'
 import Link from 'next/link';
-import { logIn } from "@/app/auth/lib/Auth"
+import { logIn } from "@/app/auth/lib/Api"
 import { ROUTES } from "@/app/routes/routes"
 import { loginFormData, emptyProps } from "@/app/definition/definition"
 

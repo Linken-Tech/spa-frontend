@@ -5,7 +5,7 @@ import {
     Typography,
 } from "@material-tailwind/react";
 import { useRouter } from "next/navigation";
-import { signUp } from "@/app/auth/lib/Auth"
+import { signUp } from "@/app/auth/lib/Api"
 import { useState } from 'react';
 import { ROUTES } from "@/app/routes/routes"
 import { signUpFormData, emptyProps } from "@/app/definition/definition";
