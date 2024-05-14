@@ -1,27 +1,11 @@
 'use client';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import TableWithStripedRows from "./components/Table/StripedRowTable"
 import DefaultSidebar from "./components/Sidebar/Sidebar";
 import { BreadcrumbsWithHomeIcon } from "./components/Breadcrumbs/Breadcrumbs";
-import { ROUTES } from "../routes/routes";
 
-const Dashboard: React.FC<{ pathName: string }> = ({ pathName }) => {
+const Dashboard: React.FC<{ title: string }> = ({ title }) => {
     const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false)
-    const [title, setTitle] = useState<string>("")
-
-    const titleRoutes : { [key:string]: string} = {
-        [ROUTES.default]: "Home",
-        [ROUTES.vehicle]: "Vehicle",
-        [ROUTES.organization]: "Organization",
-        [ROUTES.user]: "User",
-        [ROUTES.feedback]: "Feedback"
-    }
-
-    useEffect(() => {
-        const currentTitle = titleRoutes[pathName] || titleRoutes[ROUTES.default];
-        setTitle(currentTitle)
-    }, [pathName, titleRoutes])
-
     useEffect(() => {
         const handleWindowResize = () => {
             setIsMobileScreen(window.innerWidth < 768);
