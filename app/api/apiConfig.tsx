@@ -9,7 +9,7 @@ export const endPoint = {
     vehicleModel: `${baseURL}/vehicle/vehicle-model/`,
     vehicleSale: `${baseURL}/vehicle/vehicle-sale/`,
     vehicleRent: `${baseURL}/vehicle/vehicle-rent/`,
-    exportVehicleDocs: `${baseURL}/vehicle/download-docs/`,
+    vehicleExportDocs: `${baseURL}/vehicle/download-docs/`,
     user: `${baseURL}/user/user/`,
     organization: `${baseURL}/organization/organization/`,
     feedback: `${baseURL}/feedback/feedback`
